@@ -16,6 +16,14 @@ $(document).ready(function () {
     if (window.matchMedia("(max-width: 768px)").matches) {
         $("#wrap").css({ 'display': 'none' })
         $('#mobile_wrap').css({ 'display': 'block' })
+
+
+        $('#mobile_banner').slick({
+            autoplay: true,
+            arrows: false,
+            dots: false,
+            Infinity: true
+        })
     } else {
 
     }
@@ -24,25 +32,18 @@ $(document).ready(function () {
     /* mobile 영역 matchmedia  아래로 피시*/
 
     $('.vw_wrap').hide();
-    /*     $('#nav-toggle').click(function () {
-            $(this).addClass('active');
-            $('.vw_wrap').fadeIn();
-        })
-        $('.active').click(function () {
-            $('.vw_wrap').hide();
-        }) */
     $('#nav-toggle').click(function () {
-        $('.vw_wrap').toggle();
-        var i = 0;
-        for (i == 0; i < 1; i++) {
-            $('#nav-toggle').addClass('active');
-        }
-    })/* end */
-
-    $('.active').click(function () {
-        $('#nav-toggle').removeClass('active')
+        $(this).toggleClass("active")
+        $('.vw_wrap').toggle()
     })
 
+    $('.depth2').hide();
+    $('.depth1>li').mouseenter(function () {
+        $(this).children('.depth2').show(500);
+    });
+    $('.depth1 li').mouseleave(function () {
+        $(this).children('.depth2').hide(500);
+    })
 
     $('.close').click(function () {
 
@@ -60,10 +61,11 @@ $(document).ready(function () {
 
     $('#sub_banner').slick({
         autoplay: true,
-        dots: false,
+        dots: true,
         arrows: false,
         Infinity: true,
     })
+
 
     let = 0;
     $('.icon_box img:last-child').click(function () {
