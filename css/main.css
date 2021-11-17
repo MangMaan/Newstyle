@@ -157,7 +157,7 @@
 
 
 #mobile_wrap{width: 100%;}
-.mobile_util{position: fixed; bottom: 0; left: 0; z-index: 99;}
+.mobile_util{position: fixed; bottom: 0; left: 0; z-index: 999999;}
 .mobile_util .m_util{background: white; width: 100vw; display: flex; justify-content: space-between; padding: 0 30px;}
 .mobile_util .m_util li{padding: 20px 0; text-align: center;}
 #mobile_banner{width: 100%;}
